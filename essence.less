@@ -1,13 +1,39 @@
-//////////////////////////////////////////////////////////////////////////
-//
-//   This is Essence.
-//
-//   http://jmarquis.github.com/essence
-//   Minimalist, responsive, semantic grids built with LESS.
-//  
-//////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+//                                                                    //
+//    This is Essence.                                                //
+//                                                                    //
+//    http://jmarquis.github.com/essence                              //
+//    Minimalist, responsive, semantic grids built with LESS.         //
+//                                                                    //
+////////////////////////////////////////////////////////////////////////
 
-// unfortunately this global definition is necessary for now
+
+////////////////////////////////////////////////////////////////////////
+//                                                                    //
+//    Configuration                                                   //
+//                                                                    //
+////////////////////////////////////////////////////////////////////////
+
+// Context sizes
+@xl-context-min: 1200px;
+@large-context-max: (@xl-context-min - 1px);
+@large-context-min: 1024px;
+@med-context-max: (@large-context-min - 1px);
+@med-context-min: 768px;
+@small-context-max: (@med-context-min - 1px);
+
+// What is the smallest size before all columns stack?
+@float-breakpoint: @med-context-min;
+
+// Column count - suggestions: 12, 16, 24
+@total-columns: 12;
+
+// Gutter sizes
+@
+
+
+////////////////////////////////////////////////////////////////////////
+
 @float-breakpoint: 768px;
 
 #grid {
