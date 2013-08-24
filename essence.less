@@ -29,22 +29,20 @@
 @total-columns: 12;
 
 // Gutter sizes
-@
+@xl-context-gutter: 20px;
+@large-context-gutter: 20px;
+@med-context-gutter: 12px;
+@small-context-gutter: 0;
 
 
 ////////////////////////////////////////////////////////////////////////
-
-@float-breakpoint: 768px;
+//                                                                    //
+//    The Grid                                                        //
+//                                                                    //
+////////////////////////////////////////////////////////////////////////
 
 #grid {
 
-	@total-columns: 12;
-
-	@xl-context-gutter: 20px;
-	@large-context-gutter: 20px;
-	@med-context-gutter: 12px;
-	@small-context-gutter: 0;
-	
 	.row () {
 		.clearfix();
 	}
@@ -76,6 +74,10 @@
 			padding-left: (@small-context-gutter / 2);
 			padding-right: (@small-context-gutter / 2);
 		}
+	}
+
+	.col (@columns) {
+		.column(@columns);
 	}
 	
 	// disable floats at full width
