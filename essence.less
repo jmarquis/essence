@@ -1,48 +1,24 @@
-////////////////////////////////////////////////////////////////////////
-//                                                                    //
-//    This is Essence.                                                //
-//                                                                    //
-//    http://jmarquis.github.com/essence                              //
-//    Minimalist, responsive, semantic grids built with LESS.         //
-//                                                                    //
-////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//
+//   This is Essence.
+//
+//   http://jmarquis.github.com/essence
+//   Minimalist, responsive, semantic grids built with LESS.
+//  
+//////////////////////////////////////////////////////////////////////////
 
-
-////////////////////////////////////////////////////////////////////////
-//                                                                    //
-//    Configuration                                                   //
-//                                                                    //
-////////////////////////////////////////////////////////////////////////
-
-// Context sizes
-@xl-context-min: 1200px;
-@large-context-max: (@xl-context-min - 1px);
-@large-context-min: 1024px;
-@med-context-max: (@large-context-min - 1px);
-@med-context-min: 768px;
-@small-context-max: (@med-context-min - 1px);
-
-// What is the smallest size before all columns stack?
-@float-breakpoint: @med-context-min;
-
-// Column count - suggestions: 12, 16, 24
-@total-columns: 12;
-
-// Gutter sizes
-@xl-context-gutter: 20px;
-@large-context-gutter: 20px;
-@med-context-gutter: 12px;
-@small-context-gutter: 0;
-
-
-////////////////////////////////////////////////////////////////////////
-//                                                                    //
-//    The Grid                                                        //
-//                                                                    //
-////////////////////////////////////////////////////////////////////////
+// unfortunately this global definition is necessary for now
+@float-breakpoint: 768px;
 
 #grid {
 
+	@total-columns: 12;
+
+	@xl-context-gutter: 20px;
+	@large-context-gutter: 20px;
+	@med-context-gutter: 12px;
+	@small-context-gutter: 0;
+	
 	.row () {
 		.clearfix();
 	}
@@ -74,10 +50,6 @@
 			padding-left: (@small-context-gutter / 2);
 			padding-right: (@small-context-gutter / 2);
 		}
-	}
-
-	.col (@columns) {
-		.column(@columns);
 	}
 	
 	// disable floats at full width
