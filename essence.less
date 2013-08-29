@@ -14,82 +14,88 @@
 //                                                                    //
 ////////////////////////////////////////////////////////////////////////
 
-// Context sizes
-@xl-context-min: 1200px;
-@large-context-max: (@xl-context-min - 1px);
-@large-context-min: 1024px;
-@med-context-max: (@large-context-min - 1px);
-@med-context-min: 768px;
-@small-context-max: (@med-context-min - 1px);
+// Base context sizes
+@size-l: 1200px;  // generally, laptops/desktops
+@size-m: 1024px;  // generally, landscape tablets
+@size-s: 768px;   // generally, portrait tablets
+
+// Max sizes, calculated from base sizes
+@size-m-max: (@size-l - 1px);
+@size-s-max: (@size-m - 1px);
+@size-xs-max: (@size-s - 1px);
 
 // What is the smallest size before all columns stack?
-@float-breakpoint: @med-context-min;
+@float-breakpoint: @size-s;
 
-// Column count - suggestions: 12, 16, 24
-@total-columns: 12;
+// Grid column count - suggestions: 12, 16, 24
+@grid-columns: 12;
 
-// Gutter sizes
-@xl-context-gutter: 20px;
-@large-context-gutter: 20px;
-@med-context-gutter: 12px;
-@small-context-gutter: 0;
+// Gutter sizes - each corresponds to a context size
+@l-gutter: 24px;
+@m-gutter: 20px;
+@s-gutter: 12px;
+@xs-gutter: 0;
 
 
 ////////////////////////////////////////////////////////////////////////
 //                                                                    //
-//    The Grid                                                        //
+//    The Grid Mixins                                                 //
 //                                                                    //
 ////////////////////////////////////////////////////////////////////////
 
 #grid {
 
+	// a row is for wrapping columns
 	.row () {
 		.clearfix();
 	}
 
+	// define a column, sized to a certain number of grid columns and padded with the appropriate gutter
 	.column (@columns) {
 
 		@media (min-width: @float-breakpoint) {
 			float: left;
-			width: percentage(@columns / @total-columns);
+			width: percentage(@columns / @grid-columns);
 		}
 
 		min-height: 1px;
 
-		// use large context by default
-		padding-left: (@large-context-gutter / 2);
-		padding-right: (@large-context-gutter / 2);
+		// use xs context by default - mobile first!
+		padding-left: (@xs-gutter / 2);
+		padding-right: (@xs-gutter / 2);
 
-		@media (min-width: @xl-context-min) {
-			padding-left: (@xl-context-gutter / 2);
-			padding-right: (@xl-context-gutter / 2);
+		@media (min-width: @size-l) {
+			padding-left: (@l-gutter / 2);
+			padding-right: (@l-gutter / 2);
 		}
 
-		@media (min-width: @med-context-min) and (max-width: @med-context-max) {
-			padding-left: (@med-context-gutter / 2);
-			padding-right: (@med-context-gutter / 2);
+		@media (min-width: @size-m) and (max-width: @size-m-max) {
+			padding-left: (@m-gutter / 2);
+			padding-right: (@m-gutter / 2);
 		}
 
-		@media (max-width: @small-context-max) {
-			padding-left: (@small-context-gutter / 2);
-			padding-right: (@small-context-gutter / 2);
+		@media (min-width: @size-s) and (max-width: @size-s-max) {
+			padding-left: (@s-gutter / 2);
+			padding-right: (@s-gutter / 2);
 		}
 	}
 
-	.col (@columns) {
-		.column(@columns);
-	}
-	
 	// disable floats at full width
-	.column (@columns) when (@columns = @float-breakpoint) {
+	.column (@columns) when (@columns = @grid-columns) {
 		@media (min-width: @float-breakpoint) {
 			float: none;
 		}
 	}
 
+	// shortcut mixin
+	.col (@columns) {
+		.column(@columns);
+	}
+	
+	// move a column over by a specified number of grid columns
 	.offset (@columns) {
 		@media (min-width: @float-breakpoint) {
-			margin-left: percentage(@columns / @total-columns);
+			margin-left: percentage(@columns / @grid-columns);
 		}
 	}
 }
