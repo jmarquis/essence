@@ -105,11 +105,19 @@
 	.col (@columns) {
 		.column(@columns);
 	}
-	
+
 	// move a column over by a specified number of grid columns
 	.offset (@columns) {
 		@media (min-width: @float-breakpoint) {
 			margin-left: percentage((@columns / @grid-columns));
+		}
+	}
+
+	.break () {
+		@media (min-width: @float-breakpoint) {
+			float: none;
+			width: auto;
+			margin-left: 0;
 		}
 	}
 }
