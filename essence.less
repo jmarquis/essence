@@ -7,117 +7,68 @@
 //                                                                    //
 ////////////////////////////////////////////////////////////////////////
 
-
-////////////////////////////////////////////////////////////////////////
-//                                                                    //
-//    Configuration                                                   //
-//                                                                    //
-////////////////////////////////////////////////////////////////////////
-
-// Base context sizes
-@size-l: 1200px;  // generally, laptops/desktops
-@size-m: 1024px;  // generally, landscape tablets
-@size-s: 768px;   // generally, portrait tablets
-
-// Max sizes, calculated from base sizes
-@size-m-max: (@size-l - 1px);
-@size-s-max: (@size-m - 1px);
-@size-xs-max: (@size-s - 1px);
-
-// What is the smallest size before all columns stack?
-@float-breakpoint: @size-s;
-
-// Grid column count - suggestions: 12, 16, 24
-@grid-columns: 12;
-
-// Gutter sizes - each corresponds to a context size
-@l-gutter: 24px;
-@m-gutter: 20px;
-@s-gutter: 12px;
-@xs-gutter: 0;
-
-
-////////////////////////////////////////////////////////////////////////
-//                                                                    //
-//    The Grid Mixins                                                 //
-//                                                                    //
-////////////////////////////////////////////////////////////////////////
-
 #grid {
 
-	// utility mixin for clearing floats
-	.clearfix () {
+	// Default number of columns in a row
+	@default-row-columns: 12;
+
+	// Default space between each cell in a row
+	@default-gutter: 2%;
+
+	// Default point below which cells stack
+	@default-float-breakpoint: 768px;
+
+	// a row is a container for cells, and can have a custom column count, custom gutter size and custom float breakpoint
+	.row (@row-columns: @default-row-columns; @gutter: @default-gutter; @float-breakpoint: @default-float-breakpoint) {
 		
+		// clearfix
 		&::before,
 		&::after {
 			content: " ";
 			display: table;
 		}
-		
+
 		&::after {
 			clear: both;
 		}
-	}
+		
+		#grid {
 
-	// a row is for wrapping columns
-	.row () {
-		.clearfix();
-	}
+			// a cell is a container that spans a certain number of columns
+			.cell (@columns) {
+				min-height: 1px;
 
-	// define a column, sized to a certain number of grid columns and padded with the appropriate gutter
-	.column (@columns) {
+				@media (min-width: @float-breakpoint) {
+					float: left;
+					width: percentage((@columns / @row-columns));
+					padding-left: (@gutter / 2);
+					padding-right: (@gutter / 2);
+				}
 
-		@media (min-width: @float-breakpoint) {
-			float: left;
-			width: percentage((@columns / @grid-columns));
-		}
+				#grid {
+					
+					// offset a cell by a given number of columns
+					.offset (@columns) {
+						@media (min-width: @float-breakpoint) {
+							margin-left: percentage((@columns / @row-columns));
+						}
+					}
+				}
+			}
 
-		min-height: 1px;
+			.cell (@columns) when (@columns = @row-columns) {
+				@media (min-width: @float-breakpoint) {
+					float: none;
+				}
+			}
 
-		// use xs context by default - mobile first!
-		padding-left: (@xs-gutter / 2);
-		padding-right: (@xs-gutter / 2);
-
-		@media (min-width: @size-l) {
-			padding-left: (@l-gutter / 2);
-			padding-right: (@l-gutter / 2);
-		}
-
-		@media (min-width: @size-m) and (max-width: @size-m-max) {
-			padding-left: (@m-gutter / 2);
-			padding-right: (@m-gutter / 2);
-		}
-
-		@media (min-width: @size-s) and (max-width: @size-s-max) {
-			padding-left: (@s-gutter / 2);
-			padding-right: (@s-gutter / 2);
-		}
-	}
-
-	// disable floats at full width
-	.column (@columns) when (@columns = @grid-columns) {
-		@media (min-width: @float-breakpoint) {
-			float: none;
-		}
-	}
-
-	// shortcut mixin
-	.col (@columns) {
-		.column(@columns);
-	}
-
-	// move a column over by a specified number of grid columns
-	.offset (@columns) {
-		@media (min-width: @float-breakpoint) {
-			margin-left: percentage((@columns / @grid-columns));
-		}
-	}
-
-	.break () {
-		@media (min-width: @float-breakpoint) {
-			float: none;
-			width: auto;
-			margin-left: 0;
+			.break () {
+				@media (min-width: @float-breakpoint) {
+					float: none;
+					width: auto;
+					margin-left: 0;
+				}
+			}
 		}
 	}
 }

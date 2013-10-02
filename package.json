@@ -1,0 +1,26 @@
+{
+  "name": "essence",
+  "version": "0.1.1",
+  "description": "A semantic, minimalist responsive grid system powered by LESS.",
+  "main": "essence.less",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmarquis/essence.git"
+  },
+  "keywords": [
+    "less",
+    "grid",
+    "semantic",
+    "responsive",
+    "columns",
+    "960",
+    "960gs",
+    "gs",
+    "css"
+  ],
+  "author": "Jeremy Marquis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jmarquis/essence/issues"
+  }
+}
