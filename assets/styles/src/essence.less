@@ -1,0 +1,68 @@
+////////////////////////////////////////////////////////////////////////
+//                                                                    //
+//    This is Essence.                                                //
+//                                                                    //
+//    http://jmarquis.github.com/essence                              //
+//    Minimalist, responsive, semantic grids built with LESS.         //
+//                                                                    //
+////////////////////////////////////////////////////////////////////////
+
+#grid {
+
+	// Default number of columns in a row
+	@default-row-columns: 12;
+
+	// Default space between each cell in a row
+	@default-gutter: 2%;
+
+	// Default point below which cells stack
+	@default-float-breakpoint: 768px;
+
+	// a row is a container for cells, and can have a custom column count, custom gutter size and custom float breakpoint
+	.row (@row-columns: @default-row-columns; @gutter: @default-gutter; @float-breakpoint: @default-float-breakpoint) {
+		
+		// clearfix
+		&::before,
+		&::after {
+			content: " ";
+			display: table;
+		}
+
+		&::after {
+			clear: both;
+		}
+		
+		// a cell is a container that spans a certain number of columns
+		.cell (@columns) {
+			min-height: 1px;
+
+			@media (min-width: @float-breakpoint) {
+				float: left;
+				width: percentage((@columns / @row-columns));
+				padding-left: (@gutter / 2);
+				padding-right: (@gutter / 2);
+			}
+
+			// offset a cell by a given number of columns
+			.offset (@columns) {
+				@media (min-width: @float-breakpoint) {
+					margin-left: percentage((@columns / @row-columns));
+				}
+			}
+		}
+
+		.cell (@columns) when (@columns = @row-columns) {
+			@media (min-width: @float-breakpoint) {
+				float: none;
+			}
+		}
+
+		.break () {
+			@media (min-width: @float-breakpoint) {
+				float: none;
+				width: auto;
+				margin-left: 0;
+			}
+		}
+	}
+}

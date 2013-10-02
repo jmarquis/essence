@@ -1,1 +1,132 @@
-Hello
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Essence: A minimalist, responsive, semantic grid system</title>
+
+		<link rel="stylesheet" href="assets/styles/main.css">
+
+		<script src="//use.typekit.net/pvp2ggk.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
+
+		<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css"></script>
+	</head>
+	<body>
+		<header>
+			<h1>essence</h1>
+			<h2>minimalist, responsive, semantic grids</h2>
+			<nav>
+				<a href="http://github.com/jmarquis/essence/archive/v0.1.0.zip" data-icon="B">v0.1.0</a>
+				<a href="http://github.com/jmarquis/essence" data-icon="A">GitHub</a>
+			</nav>
+		</header>
+		<div>
+			<section class="intro">
+				<section class="body">
+					<h1>Grids done right</h1>
+					<p>
+						There are plenty of grid systems on the web. <b>Essence</b> gets you what you need without the clutter by taking a <strong>minimalist approach</strong>. It won’t do everything — instead, it provides a solution that’s perfect for most cases and extensible for others. Use it as it ships for simple, flexible grid layouts, or use it as a boilerplate for a more complex custom solution. Think of it as a starting point for building <strong>amazing grids</strong> with <a href="http://lesscss.org" target="_blank">LESS</a>.
+					</p>
+				</section>
+				<section class="example">
+<pre class="prettyprint">@import "essence";
+
+.content {
+    #grid > .row(12);
+
+    article {
+        .cell(8);
+    }
+
+    aside {
+        .cell(3);
+        .offset(1);
+    }
+}</pre>
+				</section>
+			</section>
+			<section class="perks">
+				<section>
+					<h3>Minimalist</h3>
+					<p>
+						No dependencies. No frameworks. No clunky CSS classes. In fact, no CSS output at all until you actually use the grid mixins. It’s just a single <code>.less</code> file with a single <code>#grid</code> namespace.
+					</p>
+				</section>
+				<section>
+					<h3>Responsive</h3>
+					<p>
+						Completely fluid, completely flexible. Use any container of any size as a grid row. Define different numbers of columns for each row, or custom gutters or breakpoints. It’s responsive grids done right.
+					</p>
+				</section>
+				<section>
+					<h3>Semantic</h3>
+					<p>
+						No layout-related CSS classes. Keep your styles in your stylesheets. Apply grid layouts using single-line LESS mixins and keep your markup squeaky clean.
+					</p>
+				</section>
+			</section>
+			<section class="usage">
+				<h1>Usage</h1>
+				<p>
+					Grab <a href="http://github.com/jmarquis/essence/archive/v0.1.0.zip">the latest version</a>, include the file in your LESS stylesheet, and start making grids!
+				</p>
+<pre class="prettyprint">@import "essence";
+
+// use any container as a row
+.some-container {
+    // define any number of columns for a row
+    #grid > .row(16);
+
+    // or use the default defined in essence.less
+    #grid > .row();
+
+    // or specify custom values for column count, gutter size and breakpoint
+    #grid > .row(10, 20px, 800px);
+
+    // use any direct children as cells
+    .some-child {
+        .cell(6);
+    }
+
+    // cells can have offsets
+    &amp; > .another-child {
+        .cell(4);
+        .offset(2);
+    }
+
+    // layouts can change at different sizes
+    &amp; > .sidebar {
+        .cell(3);
+        .offset(1);
+
+        @media (max-width: 1024px) {
+            .cell(4);
+            .offset(0);
+        }
+    }
+}
+</pre>
+				<h2>Settings</h2>
+				<p>
+					The top portion of <code>essence.less</code> contains default values for a row’s column count, gutter size and break point. These are used anytime a <code>#grid > .row()</code> mixin is used without specifying any of the respective parameters.
+				</p>
+				<h2>Advanced Customization</h2>
+				<p>
+					Essence was designed to be minimalist, and as such the codebase is relatively small and simple. Adding custom functionality or changing existing behavior is possible, but may result in problems when upgrading to newer versions of Essence. Customize at your own risk!
+				</p>
+			</section>
+			<section class="why">
+				<h2>So... Really? Another grid system?</h2>
+				<p>
+					Essence was born out of a need to quickly develop sites from grid-based Photoshop designs. Because good designers take liberties in crafting awesome designs, there are always cases where simple grid solutions just aren’t flexible enough. More complex frameworks are typically overkill — while they can be good for some cases, they tend to include tons of features and CSS clutter that goes unused.
+				</p>
+				<p>
+					Essence strikes a balance between simplicity and flexibility with the power of <a href="http://lesscss.org" target="_blank">LESS</a>. Use the features you need, ignore the ones you don’t. No code is wasted.
+				</p>
+			</section>
+		</div>
+		<footer>
+			Maintained by <a href="http://jeremymarquis.com">Jeremy Marquis</a><br><span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span><a href="https://github.com/jmarquis/essence">Essence on Github</a>
+		</footer>
+	</body>
+</html>
