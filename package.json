@@ -1,7 +1,7 @@
 {
   "name": "essence",
-  "version": "0.1.1",
-  "description": "A semantic, minimalist responsive grid system powered by LESS.",
+  "version": "0.2.0",
+  "description": "A semantic, minimalist responsive grid system for LESS.",
   "main": "essence.less",
   "repository": {
     "type": "git",
