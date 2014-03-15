@@ -1,0 +1,33 @@
+h1, h2, h3 {
+	margin: .75em 0 .5em;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+h1 {
+	font-size: 140px;
+	font-weight: 100;
+	color: @highlight;
+
+	@media (max-width: 767px) {
+		font-size: 80px;
+	}
+}
+
+h2 {
+	font-size: 28px;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-size: 24px;
+	color: @highlight;
+	font-weight: 300;
+}
+
+p {
+	line-height: 1.5;
+}

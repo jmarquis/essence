@@ -1,7 +1,7 @@
 @font-face {
 	font-family: 'essence-icons';
 	src:url('../fonts/essence-icons/essence-icons.eot');
-	src:url('../fonts/essence-icons/essence-icons.eot?#iefix') format('embedded-opentype'),
+	src:url('../fonts/essence-icons/essence-icons.eot#iefix') format('embedded-opentype'),
 		url('../fonts/essence-icons/essence-icons.woff') format('woff'),
 		url('../fonts/essence-icons/essence-icons.ttf') format('truetype'),
 		url('../fonts/essence-icons/essence-icons.svg#essence-icons') format('svg');
@@ -9,10 +9,11 @@
 	font-style: normal;
 }
 
-[data-icon]:before {
-	font-family: 'essence-icons';
+[data-icon]::before {
 	content: attr(data-icon);
+	font-family: 'essence-icons';
 	speak: none;
+	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
