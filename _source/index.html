@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+		<title>Essence: A minimalist, responsive, semantic grid system</title>
+
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:100,300,400">
+		<link rel="stylesheet" href="styles/main.css">
+
+		<script src="//use.typekit.net/pvp2ggk.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
+
+	</head>
+
+	<body>
+
+		<header>
+			<h1>essence</h1>
+			<h2>minimalist, responsive, semantic layouts</h2>
+			<nav>
+				<a href="http://github.com/jmarquis/essence/archive/v0.2.0.zip" data-icon="A">0.2.0</a>
+				<a href="http://github.com/jmarquis/essence" data-icon="B">GitHub</a>
+			</nav>
+		</header>
+
+		<section class="intro">
+			<section class="example">
+{% highlight css %}@import "essence";
+
+.content {
+    #grid > .row();
+
+    article {
+        #grid > .cell( (8/12) );
+    }
+
+    aside {
+        #grid > .cell( (3/12) );
+        #grid > .offset( (1/12) );
+    }
+}{% endhighlight %}
+			</section>
+		</section>
+
+		<section class="features">
+			<section>
+				<h3>Minimalist</h3>
+				<p>
+					No dependencies. No frameworks. No clunky CSS classes. In fact, no CSS output at all until you actually use the grid mixins. It’s just a single <code>.less</code> file with a single <code>#grid</code> namespace.
+				</p>
+			</section>
+			<section>
+				<h3>Responsive</h3>
+				<p>
+					Completely fluid, completely flexible. Use any container of any size as a row. Use different numbers and sizes of cells in each row. Define custom gutters or breakpoints. Use media queries to adjust layouts. It’s responsive grids done right.
+				</p>
+			</section>
+			<section>
+				<h3>Semantic</h3>
+				<p>
+					No layout-related CSS classes. Keep your styles in your stylesheets. Apply grid layouts using single-line LESS mixins and keep your markup squeaky clean.
+				</p>
+			</section>
+		</section>
+
+		<section class="usage">
+			<section>
+				<h3>Usage</h3>
+			</section>
+		</section>
+
+		<footer>
+			Maintained by <a href="http://jeremymarquis.com">Jeremy Marquis</a><br><span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span><a href="https://github.com/jmarquis/essence">Essence on Github</a>
+		</footer>
+
+	</body>
+
+</html>
