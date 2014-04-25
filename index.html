@@ -30,7 +30,7 @@ title: Essence
 			<h1>essence</h1>
 			<h2>minimalist, responsive, semantic layouts</h2>
 			<nav>
-				<a href="#main">Learn More</a>
+				<a href="#main" data-icon="C">Learn More</a>
 				<a href="http://github.com/jmarquis/essence/archive/v0.2.0.zip" data-icon="A">0.2.0</a>
 				<a href="http://github.com/jmarquis/essence" data-icon="B">GitHub</a>
 			</nav>
@@ -44,44 +44,62 @@ title: Essence
 {% highlight scss %}@import "essence";
 
 .content {
-    #grid > .row();
+	// define a container
+    .essence();
 
     article {
-        #grid > .cell( (8/12) );
+    	// use a traditional 12-column grid
+        .cell( (8/12) );
     }
 
     aside {
-        #grid > .cell( (3/12) );
-        #grid > .offset( (1/12) );
+    	// or use percentages or other ratios
+        #grid > .cell( 25% );
+        #grid > .offset( (5/60) );
     }
 }{% endhighlight %}
 			</section>
 
 			<section class="features">
 				<section>
-					<h3>Minimalist</h3>
+					<h4>Minimalist</h4>
 					<p>
-						No dependencies. No frameworks. No clunky CSS classes. In fact, no CSS output at all until you actually use the grid mixins. It’s just a single <code>.less</code> file with a single <code>#grid</code> namespace.
+						No dependencies. No frameworks. No clunky CSS classes. In fact, no CSS output at all until you actually use the grid mixins. It’s just a single <code>.less</code> or <code>.sass</code> file with a simple set of mixins.
 					</p>
 				</section>
 				<section>
-					<h3>Responsive</h3>
+					<h4>Responsive</h4>
 					<p>
-						Completely fluid, completely flexible. Use any container of any size as a row. Use different numbers and sizes of cells in each row. Define custom gutters or breakpoints. Use media queries to adjust layouts. It’s responsive grids done right.
+						Completely fluid, completely flexible. Use different numbers and sizes of cells in each container. Define custom gutters or breakpoints. Use media queries to adjust layouts. It’s responsive layouts done right.
 					</p>
 				</section>
 				<section>
-					<h3>Semantic</h3>
+					<h4>Semantic</h4>
 					<p>
-						No layout-related CSS classes. Keep your styles in your stylesheets. Apply grid layouts using single-line LESS mixins and keep your markup squeaky clean.
+						No layout-related CSS classes. Keep your styles in your stylesheets. Apply layouts styles using single-line LESS mixins and keep your markup squeaky clean.
 					</p>
 				</section>
 			</section>
 
-			<section class="usage">
-				<section>
-					<h3>Usage</h3>
-				</section>
+			<section class="demo">
+				<header>
+					<h3>Demo</h3>
+					<p>
+						Resize your browser to see how this grid rearranges itself to the available space using media queries and single-line mixins.
+					</p>
+				</header>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
 			</section>
 
 			<footer>
