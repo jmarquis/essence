@@ -1,3 +1,6 @@
+// Knapsack LESS Mixins 1.0.3
+// github.com/knapsackco/mixins
+
 .clearfix () {
 	*zoom: 1;
 
@@ -32,12 +35,27 @@
 	-webkit-backface-visibility: hidden;
 }
 
+// deprecated
 .transform-transition (@properties) {
 	-webkit-transition: -webkit-transform @properties;
 	-moz-transition: -moz-transform @properties;
 	-ms-transition: -ms-transform @properties;
 	transition: transform @properties;
 	-webkit-backface-visibility: hidden;
+}
+
+.transition-transform (@properties) {
+	-webkit-transition: -webkit-transform @properties;
+	-moz-transition: -moz-transform @properties;
+	-ms-transition: -ms-transform @properties;
+	transition: transform @properties;
+	-webkit-backface-visibility: hidden;
+}
+
+.transition-filter (@properties) {
+	-webkit-transition: -webkit-filter @properties;
+	-moz-transition: filter @properties;
+	transition: filter @properties;
 }
 
 .user-select (@select) {

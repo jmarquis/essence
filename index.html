@@ -15,12 +15,7 @@ title: Essence
 		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:100,300,400">
 		<link rel="stylesheet" href="styles/main.css">
 
-		<script src="//use.typekit.net/pvp2ggk.js"></script>
-		<script>try{Typekit.load();}catch(e){}</script>
-
 		<script src="scripts/modernizr.js"></script>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-		<script src="scripts/scroll.js"></script>
 
 	</head>
 
@@ -28,55 +23,53 @@ title: Essence
 
 		<header>
 			<h1>essence</h1>
-			<h2>minimalist, responsive, semantic layouts</h2>
 			<nav>
-				<a href="#main" data-icon="C">Learn More</a>
-				<a href="http://github.com/jmarquis/essence/archive/v0.2.0.zip" data-icon="A">0.2.0</a>
-				<a href="http://github.com/jmarquis/essence" data-icon="B">GitHub</a>
+				<a href="#main">Info</a>
+				<a href="http://github.com/jmarquis/essence/archive/v0.2.0.zip">Download</a>
+				<a href="http://github.com/jmarquis/essence">GitHub</a>
 			</nav>
 		</header>
 
 		<main>
 
-			<a class="anchor" name="main"></a>
+			<a name="main"></a>
 
 			<section class="intro">
-{% highlight scss %}@import "essence";
+				<section>
+<pre>{% highlight scss %}@import "essence";
 
 .content {
-    // define a container
     .essence();
 
     article {
-        // use a traditional 12-column grid
         .cell( (8/12) );
     }
 
     aside {
-        // or use percentages or other ratios
-        #grid > .cell( 25% );
-        #grid > .offset( (5/60) );
+        #grid > .cell( (3/12) );
+        #grid > .offset( (1/12) );
     }
-}{% endhighlight %}
+}{% endhighlight %}</pre>
+				</section>
 			</section>
 
 			<section class="features">
 				<section>
-					<h4>Minimalist</h4>
+					<h3>Minimalist</h3>
 					<p>
-						No dependencies. No frameworks. No clunky CSS classes. In fact, no CSS output at all until you actually use the grid mixins. It’s just a single <code>.less</code> or <code>.sass</code> file with a simple set of mixins.
+						No dependencies. No frameworks. No clunky CSS classes. In fact, no CSS output at all until you actually use the mixins. It’s just a single <code>.less</code> file with a simple set of mixins.
 					</p>
 				</section>
 				<section>
-					<h4>Responsive</h4>
+					<h3>Responsive</h3>
 					<p>
-						Completely fluid, completely flexible. Use different numbers and sizes of cells in each container. Define custom gutters or breakpoints. Use media queries to adjust layouts. It’s responsive layouts done right.
+						Completely fluid, completely flexible. Use fractions and percentages to define consistent layouts. Set custom gutters or breakpoints. Use media queries to adjust for different sizes. It’s responsive layouts done right.
 					</p>
 				</section>
 				<section>
-					<h4>Semantic</h4>
+					<h3>Semantic</h3>
 					<p>
-						No layout-related CSS classes. Keep your styles in your stylesheets. Apply layouts styles using single-line LESS mixins and keep your markup squeaky clean.
+						No layout-related CSS classes. Keep your styles in your stylesheets. Apply layouts styles using single-line mixins and keep your markup squeaky clean.
 					</p>
 				</section>
 			</section>
@@ -85,25 +78,130 @@ title: Essence
 				<header>
 					<h3>Demo</h3>
 					<p>
-						Resize your browser to see how this grid rearranges itself to the available space using media queries and single-line mixins.
+						Resize your browser to see how this basic grid rearranges itself to the available space using media queries and single-line mixins.
 					</p>
 				</header>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				<div>5</div>
+				<div>6</div>
+				<div>7</div>
+				<div>8</div>
+				<div>9</div>
+				<div>10</div>
+				<div>11</div>
+				<div>12</div>
 			</section>
 
 			<section class="usage">
+				<header>
+					<h3>Usage</h3>
+				</header>
+				<section>
+					<h4>Basic Layout</h4>
+				</section>
+				<pre>@import "essence";
 
+// choose a container...
+.content {
+
+	// ...start a layout...
+	.essence();
+
+	article {
+		// ...and start defining cells
+		.cell( (2/3) );
+	}
+
+	aside {
+		.cell( (1/3) );
+	}
+}</pre>
+				<figure id="demo-1">
+					<div class="content">
+						<article>
+							<h1>Main Heading</h1>
+							<p>
+								Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+							</p>
+						</article>
+						<aside>
+							<h2>Secondary Heading</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+							</p>
+						</aside>
+					</div>
+				</figure>
+				<section>
+					<h4>Custom Responsive Behavior</h4>
+					<p>
+						By default, cells stack below 768px. You can specify an alternate stack point or disable stacking altogether as shown below.
+				</section>
+				<pre>@import "essence";
+
+.content {
+
+	.essence();
+
+	section {
+
+		// create six equal-sized columns
+		.cell( (1/6); @breakpoint: 0px );
+
+		// custom rearrangement below 1024px
+		@media (max-width: 1023px) {
+			.cell( (1/3); @breakpoint: 0px );
+		}
+
+		// custom rearrangement below 768px
+		@media (max-width: 767px) {
+			.cell( (1/2); @breakpoint: 0px );
+		}
+	}
+}</pre>
+				<figure id="demo-2">
+					<div class="content">
+						<section>
+							<h2>Heading</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+							</p>
+						</section>
+						<section>
+							<h2>Heading</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+							</p>
+						</section>
+						<section>
+							<h2>Heading</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+							</p>
+						</section>
+						<section>
+							<h2>Heading</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+							</p>
+						</section>
+						<section>
+							<h2>Heading</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+							</p>
+						</section>
+						<section>
+							<h2>Heading</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+							</p>
+						</section>
+					</div>
+				</figure>
 			</section>
 
 			<footer>
@@ -111,6 +209,9 @@ title: Essence
 			</footer>
 
 		</main>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script src="scripts/scroll.js"></script>
 
 	</body>
 

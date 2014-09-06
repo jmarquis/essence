@@ -12,19 +12,18 @@ h1, h2, h3 {
 }
 
 h1 {
-	font-size: 10em;
+	font-size: 10vw;
 	font-weight: 100;
-	color: @highlight;
-
-	@media (max-width: 767px) {
-		font-size: 4em;
-	}
+	color: #ddd;
+	margin: 0;
+	line-height: 1;
 }
 
 h2 {
 	font-size: 1.7em;
 	font-weight: 300;
 	text-transform: uppercase;
+	color: #bbb;
 
 	@media (max-width: 767px) {
 		font-size: 1.2em;
@@ -33,16 +32,12 @@ h2 {
 
 h3 {
 	font-size: 30px;
-	color: @highlight;
-	font-weight: 300;
-}
-
-h4 {
-	font-size: 24px;
-	color: @highlight;
+	color: #bbb;
 	font-weight: 300;
 }
 
 p {
 	line-height: 1.5;
+	margin: 1em 0 .5em;
+	color: #999;
 }
