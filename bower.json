@@ -1,0 +1,27 @@
+{
+	"name": "essence",
+	"version": "0.2.0",
+	"homepage": "https://jmarquis.github.io/essence",
+	"authors": [
+		"Jeremy Marquis <jeremy@jeremymarquis.com>"
+	],
+	"description": "Minimal layouts powered by LESS.",
+	"main": "essence.less",
+	"keywords": [
+		"less",
+		"css",
+		"layout",
+		"layouts",
+		"grid",
+		"grids",
+		"rows",
+		"cells",
+		"columns",
+		"minimal",
+		"responsive",
+		"semantic",
+		"mixin",
+		"mixins"
+	],
+	"license": "MIT"
+}
