@@ -37,10 +37,11 @@ a {
 	color: #666;
 	border-radius: 4px;
 	cursor: text;
+	tab-size: 4;
 }
 
 p {
-	margin: .5em 0;
+	margin: .8em 0;
 
 	&:first-child {
 		margin-top: 0;
@@ -70,6 +71,11 @@ pre {
 	.code();
 	margin: 0;
 	padding: 10px 16px;
+	font-size: 18px;
+
+	+ p {
+		margin-top: 1.2em;
+	}
 }
 
 h2 {

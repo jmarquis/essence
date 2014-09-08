@@ -68,7 +68,59 @@
 				</section>
 
 				<section>
-					<pre>junk</pre>
+
+<pre>#container {
+	.essence(); // start a layout
+
+	> section {
+		.cell( (3/4) ); // main content is 75% of the page
+	}
+
+	> aside {
+		.cell( (1/4) ); // set up a sidebar to be 25% width
+	}
+}</pre>
+
+					<p>Result:</p>
+
+					<figure data-demo="1">
+						<section><code>3/4</code></section>
+						<aside><code>1/4</code></aside>
+					</figure>
+
+				</section>
+
+				<section>
+					<p>You can also use percentages instead of fractions.</p>
+					<p><code>.cell(100%)</code> or <code>.cell()</code> creates a full-width cell.</p>
+				</section>
+
+				<section>
+
+<pre>main {
+	.essence();
+
+	> header {
+		.cell(); // full-width cell
+	}
+
+	> section:nth-child(even) {
+		.cell(30%);
+	}
+
+	> section:nth-child(odd) {
+		.cell(70%);
+	}
+}</pre>
+
+					<p>Result:</p>
+
+					<figure data-demo="2">
+						<header><code>.cell() = 100%</code></header>
+						<section><code>30%</code></section>
+						<section><code>70%</code></section>
+					</figure>
+
 				</section>
 
 			</section>

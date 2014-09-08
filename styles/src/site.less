@@ -4,6 +4,14 @@ html, body {
 	background: #fff;
 }
 
+html {
+	box-sizing: border-box;
+}
+
+* {
+	box-sizing: inherit;
+}
+
 body {
 
 	> header {
@@ -63,7 +71,7 @@ body {
 			margin-bottom: 10% !important;
 
 			> h2 {
-				.cell(1);
+				.cell();
 				text-align: center;
 			}
 
@@ -88,12 +96,61 @@ body {
 
 			&[name="usage"] {
 
-				> section:nth-child(2) {
-					.cell( (1/4) );
+				> section:nth-child(even) {
+					.cell( (30%) );
 				}
 
-				> section:nth-child(3) {
-					.cell( (3/4) );
+				> section:nth-child(odd) {
+					.cell( (70%) );
+				}
+			}
+
+			> section > figure {
+				.essence();
+				padding: 0;
+
+				> * {
+					color: #ccc;
+					box-shadow: inset 0 0 0 3px #ddd;
+					border-radius: 5px;
+				}
+
+				&[data-demo="1"] {
+
+					> * {
+						text-align: center;
+						padding: 10px;
+						font-size: 18px;
+					}
+
+					> section {
+						.cell( (3/4) );
+					}
+
+					> aside {
+						.cell( (1/4) );
+					}
+				}
+
+				&[data-demo="2"] {
+
+					> * {
+						text-align: center;
+						padding: 10px;
+						font-size: 18px;
+					}
+
+					> header {
+						.cell();
+					}
+
+					> section:nth-child(even) {
+						.cell( (30%) );
+					}
+
+					> section:nth-child(odd) {
+						.cell( (70%) );
+					}
 				}
 			}
 		}
