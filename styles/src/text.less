@@ -27,6 +27,7 @@ a {
 		right: 0;
 		height: 1px;
 		background-color: #ddd;
+		pointer-events: none;
 	}
 }
 
@@ -35,6 +36,7 @@ a {
 	background-color: #eee;
 	color: #666;
 	border-radius: 4px;
+	cursor: text;
 }
 
 p {
@@ -56,6 +58,11 @@ p {
 		.code();
 		padding: 5px 8px;
 		margin: -5px 0;
+	}
+
+	> small {
+		opacity: .5;
+		font-size: inherit;
 	}
 }
 
