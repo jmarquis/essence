@@ -1,43 +1,76 @@
 body {
-	font: 16px "Lato", sans-serif;
-	font-weight: 400;
+	color: #666;
+	font: 24px/1.5 "Lato";
+	font-weight: 300;
 }
 
-h1, h2, h3 {
-	margin: .75em 0 .5em;
+a {
+	text-decoration: none;
+	color: inherit;
+	opacity: .7;
+	position: relative;
+
+	&:hover {
+		opacity: 1;
+
+		&::after {
+			background-color: #ccc;
+		}
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 100%;
+		margin-top: 3px;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background-color: #ddd;
+	}
+}
+
+.code () {
+	font-family: "Ubuntu Mono", "Consolas", monospace;
+	background-color: #eee;
+	color: #666;
+	border-radius: 4px;
+}
+
+p {
+	margin: .5em 0;
 
 	&:first-child {
 		margin-top: 0;
 	}
-}
 
-h1 {
-	font-size: 10vw;
-	font-weight: 100;
-	color: #ddd;
-	margin: 0;
-	line-height: 1;
-}
+	&:last-child {
+		margin-bottom: 0;
+	}
 
-h2 {
-	font-size: 1.7em;
-	font-weight: 300;
-	text-transform: uppercase;
-	color: #bbb;
+	> strong {
+		font-weight: 400;
+	}
 
-	@media (max-width: 767px) {
-		font-size: 1.2em;
+	> code {
+		.code();
+		padding: 5px 8px;
+		margin: -5px 0;
 	}
 }
 
-h3 {
-	font-size: 30px;
-	color: #bbb;
-	font-weight: 300;
+pre {
+	.code();
+	margin: 0;
+	padding: 10px 16px;
 }
 
-p {
-	line-height: 1.5;
-	margin: 1em 0 .5em;
-	color: #999;
+h2 {
+	font-size: 5vw;
+	line-height: 1;
+	font-weight: 100;
+	letter-spacing: 2vw;
+	padding-left: 2vw;
+	text-align: center;
+	margin: 2em 0 1em !important;
 }
