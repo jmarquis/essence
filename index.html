@@ -74,14 +74,17 @@ title: essence
 
 {% highlight scss %}
 #container {
-	.essence(); // start a layout
+	// start a layout
+	.essence();
 
 	> section {
-		.cell( (3/4) ); // main content is 75% of the page
+		// main content is 75% of the page
+		.cell( (3/4) );
 	}
 
 	> aside {
-		.cell( (1/4) ); // set up a sidebar to be 25% width
+		// set up a sidebar to be 25% width
+		.cell( (1/4) );
 	}
 }
 {% endhighlight %}
@@ -107,7 +110,8 @@ title: essence
 	.essence();
 
 	> header {
-		.cell(); // full-width cell
+		// full-width cell
+		.cell();
 	}
 
 	> section:nth-child(even) {
