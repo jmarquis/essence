@@ -1,3 +1,6 @@
+---
+title: essence
+---
 <!DOCTYPE html>
 <html>
 
@@ -69,7 +72,8 @@
 
 				<section>
 
-<pre>#container {
+{% highlight scss %}
+#container {
 	.essence(); // start a layout
 
 	> section {
@@ -79,7 +83,8 @@
 	> aside {
 		.cell( (1/4) ); // set up a sidebar to be 25% width
 	}
-}</pre>
+}
+{% endhighlight %}
 
 					<p>Result:</p>
 
@@ -97,7 +102,8 @@
 
 				<section>
 
-<pre>#container {
+{% highlight scss %}
+#container {
 	.essence();
 
 	> header {
@@ -111,7 +117,8 @@
 	> section:nth-child(odd) {
 		.cell(70%);
 	}
-}</pre>
+}
+{% endhighlight %}
 
 					<p>Result:</p>
 
@@ -129,7 +136,8 @@
 
 				<section>
 
-<pre>// you can set global defaults...
+{% highlight scss %}
+// you can set global defaults...
 @default-gutter: 3%;
 @default-breakpoint: 960px;
 
@@ -147,7 +155,8 @@
 			.offset( (1/3); @gutter: 1%; @breakpoint: 1024px );
 		}
 	}
-}</pre>
+}
+{% endhighlight %}
 
 					<p>Result:</p>
 
@@ -166,7 +175,8 @@
 
 				<section>
 
-<pre>#container {
+{% highlight scss %}
+#container {
 	.essence();
 
 	> div {
@@ -180,7 +190,8 @@
 			.cell( (1/4) );
 		}
 	}
-}</pre>
+}
+{% endhighlight %}
 
 					<p>Result:</p>
 
