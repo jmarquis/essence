@@ -94,7 +94,7 @@ body {
 				}
 			}
 
-			&[name="usage"] {
+			&[name="use"] {
 
 				> section:nth-child(even) {
 					.cell( (30%) );
@@ -102,55 +102,91 @@ body {
 
 				> section:nth-child(odd) {
 					.cell( (70%) );
+					margin-bottom: 10% !important;
+
+					@media (max-width: 767px) {
+						margin-bottom: 20% !important;
+					}
+
+					> figure {
+						margin: 0;
+						padding: 0;
+
+						> * {
+							color: #ccc;
+							box-shadow: inset 0 0 0 3px #ddd;
+							border-radius: 5px;
+							text-align: center;
+							padding: 10px;
+							font-size: 18px;
+						}
+
+						&[data-demo="1"] {
+							.essence();
+
+							> section {
+								.cell( (3/4) );
+							}
+
+							> aside {
+								.cell( (1/4) );
+							}
+						}
+
+						&[data-demo="2"] {
+							.essence();
+
+							> header {
+								.cell();
+							}
+
+							> section:nth-child(even) {
+								.cell( (30%) );
+							}
+
+							> section:nth-child(odd) {
+								.cell( (70%) );
+							}
+						}
+
+						&[data-demo="3"] {
+							.essence(@gutter: 1%; @breakpoint: 1024px);
+
+							> div {
+								.cell( (1/6); @gutter: 1%; @breakpoint: 1024px );
+
+								&:nth-child(3) {
+									.offset( (1/3); @gutter: 1%; @breakpoint: 1024px );
+								}
+							}
+						}
+
+						&[data-demo="4"] {
+							.essence();
+
+							> div {
+								.cell( (1/2) );
+								text-align: left;
+								padding: 10px 14px;
+
+								@media (min-width: 1024px) {
+									.cell( (1/3) );
+								}
+
+								@media (min-width: 1200px) {
+									.cell( (1/4) );
+								}
+							}
+						}
+					}
 				}
 			}
 
-			> section > figure {
-				.essence();
-				padding: 0;
+			&[name="extend"] {
+				padding-bottom: 10%;
 
-				> * {
-					color: #ccc;
-					box-shadow: inset 0 0 0 3px #ddd;
-					border-radius: 5px;
-				}
-
-				&[data-demo="1"] {
-
-					> * {
-						text-align: center;
-						padding: 10px;
-						font-size: 18px;
-					}
-
-					> section {
-						.cell( (3/4) );
-					}
-
-					> aside {
-						.cell( (1/4) );
-					}
-				}
-
-				&[data-demo="2"] {
-
-					> * {
-						text-align: center;
-						padding: 10px;
-						font-size: 18px;
-					}
-
-					> header {
-						.cell();
-					}
-
-					> section:nth-child(even) {
-						.cell( (30%) );
-					}
-
-					> section:nth-child(odd) {
-						.cell( (70%) );
-					}
+				> section {
+					.cell();
 				}
 			}
 		}

@@ -59,7 +59,7 @@
 
 			</section>
 
-			<section name="usage">
+			<section name="use">
 
 				<h2>use</h2>
 
@@ -97,7 +97,7 @@
 
 				<section>
 
-<pre>main {
+<pre>#container {
 	.essence();
 
 	> header {
@@ -121,6 +121,94 @@
 						<section><code>70%</code></section>
 					</figure>
 
+				</section>
+
+				<section>
+					<p>Advanced options include offsets, custom gutter sizes and alternative breakpoints.</p>
+				</section>
+
+				<section>
+
+<pre>// you can set global defaults...
+@default-gutter: 3%;
+@default-breakpoint: 960px;
+
+// ...or do it per layout:
+#container {
+	// set a custom gutter and breakpoint
+	.essence(@gutter: 1%; @breakpoint: 1024px);
+
+	> div {
+		// cells will stack below 1024px
+		.cell( (1/6); @gutter: 1%; @breakpoint: 1024px );
+
+		&:nth-child(3) {
+			// offset by 1/3
+			.offset( (1/3); @gutter: 1%; @breakpoint: 1024px );
+		}
+	}
+}</pre>
+
+					<p>Result:</p>
+
+					<figure data-demo="3">
+						<div><code>1/6</code></div>
+						<div><code>1/6</code></div>
+						<div><code>1/6</code></div>
+						<div><code>1/6</code></div>
+					</figure>
+
+				</section>
+
+				<section>
+					<p>For the ultimate responsive setup, use media queries to change layouts at different sizes.</p>
+				</section>
+
+				<section>
+
+<pre>#container {
+	.essence();
+
+	> div {
+		.cell( (1/2) );
+
+		@media (min-width: 1024px) {
+			.cell( (1/3) );
+		}
+
+		@media (min-width: 1200px) {
+			.cell( (1/4) );
+		}
+	}
+}</pre>
+
+					<p>Result:</p>
+
+					<figure data-demo="4">
+						<div>Lorem ipsum dolor sit amet...</div>
+						<div>Lorem ipsum dolor sit amet...</div>
+						<div>Lorem ipsum dolor sit amet...</div>
+						<div>Lorem ipsum dolor sit amet...</div>
+						<div>Lorem ipsum dolor sit amet...</div>
+						<div>Lorem ipsum dolor sit amet...</div>
+						<div>Lorem ipsum dolor sit amet...</div>
+						<div>Lorem ipsum dolor sit amet...</div>
+						<div>Lorem ipsum dolor sit amet...</div>
+						<div>Lorem ipsum dolor sit amet...</div>
+						<div>Lorem ipsum dolor sit amet...</div>
+						<div>Lorem ipsum dolor sit amet...</div>
+					</figure>
+
+				</section>
+
+			</section>
+
+			<section name="extend">
+
+				<h2>extend</h2>
+
+				<section>
+					<p>Fork the <a href="https://github.com/jmarquis/essence">essence repo</a> and make essence work for you... then open an issue to get your fork featured here!</p>
 				</section>
 
 			</section>

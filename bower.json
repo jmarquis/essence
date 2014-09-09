@@ -12,6 +12,7 @@
   "dependencies": {
     "normalize-css": "~3.0.1",
     "html5shiv": "~3.7.2",
-    "essence": "~0.2.0"
+    "essence": "~0.2.0",
+    "viewport-units-buggyfill": "~0.4.1"
   }
 }

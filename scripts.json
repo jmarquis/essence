@@ -1,4 +1,5 @@
 [
 	"bower_components/html5shiv/dist/html5shiv.js",
+	"bower_components/viewport-units-buggyfill/viewport-units-buggyfill.js",
 	"scripts/src/site.js"
 ]
